@@ -3,38 +3,72 @@ layout: page
 title: Chabudai
 permalink: /chabudai/
 ---
+## Chabudai: A Conversational Ergonomics Framework
 
-# Chabudai: Conversational Ergonomics Framework
+### 1. Introduction: The Challenge of Online Conversation
 
-Chabudai is an open-source, plug-and-play solution designed to enhance human conversations with technology. Drawing inspiration from the Japanese short-legged table, Chabudai aims to create a comfortable, inclusive, and engaging environment for digital interactions.
+The digital world has revolutionized how we communicate, but it has also introduced new challenges. Online conversations often lack the nuance, structure, and support that we experience in face-to-face interactions. They can be chaotic, unproductive, and even emotionally draining.
 
-## The Vision
+Chabudai aims to address this problem by providing a framework for **conversational ergonomics**: the design of online communication tools that enhance our ability to engage in meaningful, efficient, and fulfilling dialogues.
 
-In today's fast-paced, digitally-mediated world, we often find ourselves struggling to have meaningful, productive, and compassionate conversations online. Chabudai seeks to address this challenge by providing a flexible and extensible framework that can adapt to the diverse needs and preferences of users.
+### 2. The Vision: Empowering Conversations with Technology
 
-By leveraging advanced technologies such as natural language processing, sentiment analysis, and machine learning, Chabudai aims to create a more intuitive, empathetic, and context-aware conversational experience. At the same time, the project is deeply grounded in the principles of right speech, striving to promote truthfulness, kindness, harmony, and clarity in all interactions.
+Chabudai's vision is to create a platform where technology empowers, rather than hinders, human connection. We envision a world where online conversations are:
 
-## Key Features
+* **Structured and Purposeful:** Tools and plugins help guide discussions, promote focus, and extract key insights.
+* **Emotionally Intelligent:**  AI-powered features offer real-time feedback, promote empathy, and foster a positive conversational tone.
+* **Accessible and Inclusive:**  Language translation, transcription, and other tools ensure participation for all.
+* **Secure and Private:**  Users have full control over their data and can confidently engage in confidential conversations.
 
-Chabudai is designed to be highly modular and customizable, allowing users to tailor their conversational environment to their specific needs and preferences. Some of the key features include:
+### 3. The Solution: An Extensible Framework for Conversational Ergonomics
 
-- **Plug-and-Play Architecture**: Chabudai's modular design allows for easy integration of various components, such as language translation, sentiment analysis, and content moderation, enabling users to create a customized conversational experience.
+Chabudai's core is a secure and scalable platform for real-time communication. However, what truly sets it apart is its **plugin architecture**.
 
-- **Contextual Awareness**: By leveraging advanced natural language processing techniques, Chabudai can maintain and leverage context across multiple conversational sessions, enabling more seamless and coherent interactions.
+Inspired by the success of platforms like WordPress, Chabudai enables developers to create **plugins** that extend and customize the conversational experience. This opens up a world of possibilities, allowing users to tailor their interactions to meet specific needs:
 
-- **Emotional Intelligence**: Chabudai incorporates sentiment analysis and emotional recognition capabilities to provide users with real-time feedback and support, promoting more empathetic and harmonious conversations.
+* **Scribe Plugins:**  Generate transcripts, summaries, and action items from conversations.
+* **Moderator Plugins:**  Enforce rules, manage turn-taking, and moderate content.
+* **AI Enhancement Plugins:** Provide sentiment analysis, dialogue mapping, and real-time feedback.
+* **Ergonomic Widgets:**  Enhance the user interface with features like weather displays, shared timers, or even "resting bitch face" monitors.
 
-- **Accessibility and Inclusivity**: With features like real-time translation, text-to-speech, and configurable display settings, Chabudai strives to create a conversational environment that is accessible and inclusive to users of diverse abilities and backgrounds.
+### 4. Technical Architecture: A Robust and Flexible Foundation
 
-- **Privacy and Security**: Chabudai prioritizes user privacy and data security, providing robust encryption, access controls, and transparent data management practices.
+Chabudai is built on a modern, distributed architecture designed for scalability, performance, and security:
 
-## Get Involved
+**Core Components:**
 
-Chabudai is an open-source project, and we welcome contributions from developers, designers, researchers, and anyone passionate about creating more meaningful and compassionate digital conversations.
+* **Authentication & Authorization:** Secure access control using JWT (JSON Web Token) and support for OAuth and SAML.
+* **Data Storage:** Encrypted and isolated by tenant (user or room). RDBMS for core data, Redis for real-time content, and NoSQL for plugins. 
+* **Streaming Infrastructure:** Redis Cluster for real-time events, Kafka/RedPanda for worker streaming, and a message queue for scheduled tasks.
+* **Event System:**  Robust event hooks for plugins to interact with core features and each other.
+* **CRUD Interface:**  API and UI for managing entities, permissions, and configurations.
+* **Plugin Manager:**  Handles plugin lifecycle (installation, updates, activation/deactivation).
+* **Worker API:**  Enables asynchronous plugin tasks (e.g., summarization, analysis).
+* **UI SDK:**  Provides tools for plugins to extend the user interface seamlessly and securely.
 
-Whether you want to contribute code, provide feedback, or simply learn more about the project, there are many ways to get involved:
+**Plugin Architecture:**
 
-- Visit our [GitHub repository](https://github.com/Samavaca/chabudai-core) to view the source code, submit issues, or propose pull requests.
+* Plugins run in isolated Docker containers for security and resource management.
+* They communicate with the core and other plugins through a high-speed, secure messaging bus (using technologies like NATS).
+* Plugin developers have access to rich SDKs (Web2C, Serv2C, Worker2C) for interacting with Chabudai's core functionalities. 
 
+### 5. Roadmap: A Phased Approach to Realizing the Vision
 
-We are always exploring new ideas and opportunities to advance our mission. If you have a project idea that aligns with our values and goals, we'd love to hear from you! Get in touch with us at [contact@samavaca.org](mailto:contact@samavaca.org) or join our [community forum](link-to-forum) to start a discussion.
+Chabudai will be developed in a phased approach, prioritizing core functionality and user value in early releases:
+
+**Phase 1: Foundation:**
+* Build the core platform (authentication, chat, basic plugin system, admin UI).
+* Develop a few essential plugins (chat analytics, moderation).
+* Focus on stability, security, and initial documentation.
+
+**Phase 2: Expanding the Ecosystem:**
+* Enhance the plugin SDK and attract developers to build a thriving ecosystem.
+* Introduce advanced AI features (claim extraction, dialogue mapping).
+* Improve the user experience based on feedback. 
+
+**Phase 3: Scaling and Distribution:**
+* Focus on scalability, self-hosting options, and user-contributed resources.
+* Introduce a plugin marketplace or licensing framework for monetization. 
+* Continue to iterate and refine the platform based on community needs.
+
+**Chabudai is more than just another chat application. It is a framework for reimagining online conversation, empowering users and developers to create a more humane and productive digital world.**
